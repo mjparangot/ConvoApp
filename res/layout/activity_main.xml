@@ -1,7 +1,32 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
+    <com.example.convoapp.ProgressWheel
+        android:id="@+id/pw_spinner"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        ProgressWheel:barColor="#0097D6"
+        ProgressWheel:barLength="40dp"
+        ProgressWheel:barWidth="20dp"
+        ProgressWheel:rimColor="#330097D6"
+        ProgressWheel:rimWidth="10dp"
+        ProgressWheel:textColor="#222"
+        ProgressWheel:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pw_spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Start" />
+    
 </RelativeLayout>
