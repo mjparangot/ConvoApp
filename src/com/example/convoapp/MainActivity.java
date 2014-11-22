@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,15 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.content.Intent;
-public class MainActivity extends Activity {
-	
-	// Spinner
-	ProgressWheel pw;
-
-	// Stores last three topics found
-    ArrayList<String> topicList = new ArrayList<String>();
-    
-=======
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
@@ -29,6 +19,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class MainActivity extends Activity implements RecognitionListener {
+	
+	// Spinner
+	ProgressWheel pw;
+
+	// Stores last three topics found
+    ArrayList<String> topicList = new ArrayList<String>();
 
 	protected static final int RESULT_SPEECH = 1;
 	private StringBuilder conversation;
@@ -36,14 +32,12 @@ public class MainActivity extends Activity implements RecognitionListener {
 	private Intent intent;
 	private boolean stopPressed=false;
 	
->>>>>>> a744c75a7f587058c863f823439c8278d6132769
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
 		super.onCreate(savedInstanceState);
 		// Remove title bar
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-<<<<<<< HEAD
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); 
 		
@@ -54,12 +48,9 @@ public class MainActivity extends Activity implements RecognitionListener {
 		pw = (ProgressWheel) findViewById(R.id.pw_spinner);
 		
 		
-		final Button button = (Button) findViewById(R.id.button1);
+		final Button button = (Button) findViewById(R.id.btnSpin);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	
-            	Intent intent = new Intent(getApplicationContext(), TopicListActivity.class);
-            	startActivity(intent);
             	
                 if (pw.isSpinning()) {
                 	pw.stopSpinning();
@@ -72,11 +63,7 @@ public class MainActivity extends Activity implements RecognitionListener {
                 
             }
         });
-=======
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.activity_main);
-		
+        
 		conversation = new StringBuilder();
 		speech = SpeechRecognizer.createSpeechRecognizer(this);
 	    speech.setRecognitionListener(this);
@@ -85,7 +72,6 @@ public class MainActivity extends Activity implements RecognitionListener {
 	    intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "en");
 	    intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,
 	        this.getPackageName());
-
 	}	
 
 
@@ -148,8 +134,6 @@ public class MainActivity extends Activity implements RecognitionListener {
 	@Override
 	public void onEvent(int eventType, Bundle params) {
 		// TODO Auto-generated method stub
-		
->>>>>>> a744c75a7f587058c863f823439c8278d6132769
 	}
 	
 	
