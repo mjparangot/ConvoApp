@@ -70,7 +70,7 @@ public class Skyttle {
 			connection.setRequestProperty("Content-Type",
 			          "application/x-www-form-urlencoded");
 			connection.setRequestProperty("X-Mashape-Authorization",
-				"ZX3GF1ZRiamshUFUKSthjRAsSGk3p1yXENKjsnQPlehRuvp8C1");
+				""); // Authorization string for second parameter
 	        connection.setUseCaches(false);
 	        connection.setDoInput(true);
 	        connection.setDoOutput(true);
